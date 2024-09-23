@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class PauseMenuController : MonoBehaviour
 {
-    public GameObject pauseMenu; // Объект меню паузы
-    private bool isPaused = false; // Флаг состояния паузы
+    public GameObject pauseMenu;
+    private bool isPaused = false;
 
     void Update()
     {
-        // Проверяем нажатие клавиши ESCAPE
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
@@ -16,12 +15,10 @@ public class PauseMenuController : MonoBehaviour
 
     void TogglePause()
     {
-        // Если игра не в паузе, перейдем в режим паузы
         if (!isPaused)
         {
             PauseGame();
         }
-        // Если игра в паузе, возобновим игру
         else
         {
             ResumeGame();
@@ -30,17 +27,17 @@ public class PauseMenuController : MonoBehaviour
 
     void PauseGame()
     {
-        Time.timeScale = 0f; // Останавливаем игру
-        isPaused = true; // Устанавливаем флаг паузы
-        pauseMenu.SetActive(true); // Активируем меню паузы
-        Cursor.visible = true; // Показываем курсор
+        Time.timeScale = 0f; 
+        isPaused = true; 
+        pauseMenu.SetActive(true);
+        Cursor.visible = true; 
     }
 
     void ResumeGame()
     {
-        Time.timeScale = 1f; // Возобновляем игру
-        isPaused = false; // Устанавливаем флаг паузы
-        pauseMenu.SetActive(false); // Деактивируем меню паузы
-        Cursor.visible = false; // Скрываем курсор
+        Time.timeScale = 1f; 
+        isPaused = false; 
+        pauseMenu.SetActive(false); 
+        Cursor.visible = false; 
     }
 }

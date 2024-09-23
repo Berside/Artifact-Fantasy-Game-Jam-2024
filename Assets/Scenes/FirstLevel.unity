@@ -603,7 +603,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0418\u0433\u0440\u0430\u0442\u044C"
+  m_Text: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
 --- !u!222 &112635655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -798,7 +798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &175796426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49586,8 +49586,8 @@ Transform:
   m_GameObject: {fileID: 764042324}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.65, y: -2.83, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -10.6599, y: -2.8698, z: 0}
+  m_LocalScale: {x: 0.9922, y: 0.9689, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2062514103}
@@ -53660,7 +53660,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1920x1080
+  m_Text: 
 --- !u!222 &1285426238
 CanvasRenderer:
   m_ObjectHideFlags: 0
