@@ -50,7 +50,7 @@ public class BasicCharacterMovement : MonoBehaviour
         //    print(transform.localScale.x);
         //    flip();
         //}
-        print(transform.eulerAngles.y);
+
         if (_facingRight && Mathf.Abs(transform.eulerAngles.y) >= 179.001f || !_facingRight && transform.eulerAngles.y < 0.001f)
         {
             //print(transform.localRotation.y);

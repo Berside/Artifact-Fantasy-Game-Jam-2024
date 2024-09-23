@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FirstLevel.unity
     guid: b18565c2fb9ca494db0799fe3371fe56
+  - enabled: 1
+    path: Assets/Scenes/CaveLevel.unity
+    guid: d29bb76587acad143a89728fff2ba3c3
   m_configObjects: {}

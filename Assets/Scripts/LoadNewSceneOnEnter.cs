@@ -3,11 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class LoadNewSceneOnEnter : MonoBehaviour
 {
-    public string triggerZoneTag = "next"; 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(triggerZoneTag))
+        if (other.CompareTag("Player"))
         {
             Debug.Log("Игрок вошел в зону для загрузки новой сцены");
             SceneManager.LoadScene("CaveLevel");
