@@ -11,11 +11,14 @@ public class BasicCharacterMovement : MonoBehaviour
     private Rigidbody2D _rb2d;
     private ContactFilter2D _platform;
 
-    public float horizontalSpeed = 1, jumpForce = 20;
+    public float horizontalSpeed = 3, jumpForce = 4;
 
     private bool _isOnPlatform => _rb2d.IsTouching(_platform);
 
     private bool _facingRight = true;
+
+    private float _jumpPressTime = 0.8f;
+    public float jumpCooldown = 0.8f;
 
     void Awake()
     {
@@ -26,7 +29,28 @@ public class BasicCharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _jumpPressTime += Time.deltaTime;
+        
+    }
 
+    public void flip()
+    {
+        if (!_facingRight)
+        {
+            transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+            transform.Rotate(new Vector3(0, 180, 0));
+            //transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+        else
+        {
+            transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+            transform.Rotate(new Vector3(0, 180, 0));
+            //transform.localScale = new Vector3(1f, 1f, 1f);
+        }
+    }
+
+    private void FixedUpdate()
+    {
         float moveHorizontal = Input.GetAxis("Horizontal");
 
         if (moveHorizontal != 0)
@@ -56,40 +80,27 @@ public class BasicCharacterMovement : MonoBehaviour
             //print(transform.localRotation.y);
             flip();
         }
-    }
 
-    public void flip()
-    {
-        if (!_facingRight)
-        {
-            transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-            transform.Rotate(new Vector3(0, 180, 0));
-            //transform.localScale = new Vector3(-1f, 1f, 1f);
-        }
-        else
-        {
-            transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-            transform.Rotate(new Vector3(0, 180, 0));
-            //transform.localScale = new Vector3(1f, 1f, 1f);
-        }
-    }
 
-    private void FixedUpdate()
-    {
         if (_isOnPlatform)
         {
             _animator.SetFloat("Vertical", 0);
+            _animator.SetBool("isJumping", false);
         }
         else
         {
             _animator.SetFloat("Vertical", 1);
         }
-
+        
         if (Input.GetKey(KeyCode.Space))
         {
-            if (_isOnPlatform)
+            _animator.SetBool("isJumping", true);
+            if (_isOnPlatform && _jumpPressTime >= jumpCooldown)
             {
                 _rb2d.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+                _animator.Play("Jump");
+
+                _jumpPressTime = 0;
                 //_rb2d.AddForce(new Vector2(0, jumpForce));
             }
         }
