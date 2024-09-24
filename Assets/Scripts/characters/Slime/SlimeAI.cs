@@ -108,9 +108,10 @@ public class SlimeAI : MonoBehaviour
         
 
         // Optional: Apply knockback to the player
-        Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
-        if (playerRb.tag == "Player")
+        Health playerHealth = player.GetComponent<Health>();
+        if (playerHealth.tag == "Player")
         {
+            playerHealth.takeDamage(damage);
             Debug.Log("Slime attacks the player!");
         }
     }

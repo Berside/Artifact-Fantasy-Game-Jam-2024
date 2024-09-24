@@ -42,10 +42,11 @@ GameObject:
   - component: {fileID: 7305718965329181224}
   - component: {fileID: 4455882790173766659}
   - component: {fileID: 7570472600550889803}
-  - component: {fileID: 6286993870046896149}
   - component: {fileID: 9073240267105923716}
-  - component: {fileID: 4797836917039817614}
   - component: {fileID: 2546187692161805451}
+  - component: {fileID: 4797836917039817614}
+  - component: {fileID: 6286993870046896149}
+  - component: {fileID: 3229718989545880981}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -142,21 +143,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6286993870046896149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8212361375929299346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cc0975e26897624196ca51187bcc12f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalSpeed: 3
-  jumpForce: 4
-  jumpCooldown: 0.8
 --- !u!50 &9073240267105923716
 Rigidbody2D:
   serializedVersion: 4
@@ -184,21 +170,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4797836917039817614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8212361375929299346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb563217d74fd342a2745b556e08277, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootingPoint: {fileID: 2011183827569114123}
-  bulletPrefab: {fileID: 7099999221913038276, guid: e0b5a037b5ad10d499837d8571dc7281, type: 3}
-  ShootingCooldown: 1
 --- !u!70 &2546187692161805451
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -234,3 +205,47 @@ CapsuleCollider2D:
   m_Offset: {x: -0.4304061, y: -0.4055041}
   m_Size: {x: 0.6893854, y: 1.053435}
   m_Direction: 0
+--- !u!114 &4797836917039817614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8212361375929299346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb563217d74fd342a2745b556e08277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingPoint: {fileID: 2011183827569114123}
+  bulletPrefab: {fileID: 7099999221913038276, guid: e0b5a037b5ad10d499837d8571dc7281, type: 3}
+  ShootingCooldown: 1
+--- !u!114 &6286993870046896149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8212361375929299346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc0975e26897624196ca51187bcc12f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalSpeed: 3
+  jumpForce: 4
+  jumpCooldown: 0.8
+--- !u!114 &3229718989545880981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8212361375929299346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74282cb9d4867d41bb3c8dafe8489ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  maxHealth: 100

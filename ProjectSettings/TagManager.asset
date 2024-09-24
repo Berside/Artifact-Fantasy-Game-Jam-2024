@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TriggerZone
   - next
+  - Enemy
   layers:
   - Default
   - TransparentFX
