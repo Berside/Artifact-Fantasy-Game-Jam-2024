@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 9043493292923288129}
   - component: {fileID: 6449864669908618206}
   - component: {fileID: 7623962588350823710}
-  m_Layer: 0
+  - component: {fileID: 1989147699813795705}
+  m_Layer: 7
   m_Name: GreenSlime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleJumpInterval: 2
-  chaseJumpInterval: 1
+  chaseJumpInterval: 1.5
   jumpForce: 5
   detectionRadius: 10
   moveSpeed: 2
@@ -203,9 +204,26 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundCheck: {fileID: 875250930651473090}
-  attackRange: 1
+  attackRange: 0.8
   damage: 10
   attackCooldown: 2
+  drawDetectionRadius: 1
+  drawAttackRadius: 1
+  drawGroundCheckRadius: 0
+--- !u!114 &1989147699813795705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335495495670852571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74282cb9d4867d41bb3c8dafe8489ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 20
+  maxHealth: 20
 --- !u!1 &7991201741521757596
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 875250930651473090}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Playables;
@@ -17,20 +18,24 @@ public class SlimeAI : MonoBehaviour
     public int damage = 10; // Damage the slime inflicts on the player
     public float attackCooldown = 2f; // Time between attacks
 
-    private bool isIdle = true;
-    private Transform player;
-    private Rigidbody2D rb;
-    private float nextJumpTime = 0f;
-    private bool isGrounded;
-    private float groundCheckRadius = 0.6f;
-    private float lastAttackTime = 0f;
+    protected bool isIdle = true;
+    protected Transform player;
+    protected Rigidbody2D rb;
+    protected float nextJumpTime = 0f;
+    protected bool isGrounded;
+    protected float groundCheckRadius = 0.6f;
+    protected float lastAttackTime = 0f;
+
+    public bool drawDetectionRadius;
+    public bool drawAttackRadius;
+    public bool drawGroundCheckRadius;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    protected void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, LayerMask.GetMask("Ground"));
 
@@ -59,7 +64,7 @@ public class SlimeAI : MonoBehaviour
     void JumpIdle()
     {
         // Jump in a random direction
-        rb.velocity = new Vector2(Random.Range(-1f, 1f) * moveSpeed, jumpForce);
+        rb.velocity = new Vector2(UnityEngine.Random.Range(-1f, 1f) * moveSpeed, jumpForce);
     }
 
     void ChasePlayer()
@@ -108,9 +113,10 @@ public class SlimeAI : MonoBehaviour
         
 
         // Optional: Apply knockback to the player
-        Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
-        if (playerRb.tag == "Player")
+        Health playerHealth = player.GetComponent<Health>();
+        if (playerHealth.tag == "Player")
         {
+            playerHealth.takeDamage(damage);
             Debug.Log("Slime attacks the player!");
         }
     }
@@ -118,7 +124,20 @@ public class SlimeAI : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         // Draw the detection radius in the editor
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, detectionRadius);
+        if (drawDetectionRadius)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, detectionRadius);
+        }
+        if (drawAttackRadius)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(transform.position, attackRange);
+        }
+        if (drawGroundCheckRadius)
+        {
+            Gizmos.color = Color.black;
+            Gizmos.DrawWireSphere(transform.position, groundCheckRadius);
+        }
     }
 }

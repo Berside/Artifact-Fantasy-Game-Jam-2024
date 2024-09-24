@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public float speed;
     private Rigidbody2D rb;
 
+    public float damage;
     public float fbTime;
     private float bulletFlightTime;
 
@@ -29,11 +30,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Enemy enemy = collision.GetComponent<Enemy>();
+        Health objectHealth = collision.GetComponent<Health>();
 
-        if (enemy != null)
+        if (objectHealth != null && collision.tag == "Enemy")
         {
-            enemy.takeDamage(50);
+            objectHealth.takeDamage(damage);
         }
         Destroy(gameObject);
     }
