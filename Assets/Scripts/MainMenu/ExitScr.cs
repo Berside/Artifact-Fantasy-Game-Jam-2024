@@ -11,20 +11,75 @@ public class MainMenuController : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject settingsPanel;
     public GameObject FAQ;
+    public Text buttonTextComponent;
 
     void Start()
     {
         // Инициализация кнопок
-        playButton.onClick.AddListener(OnPlayClick);
-        settingsButton.onClick.AddListener(OnSettingsClick);
-        FAQbutton.onClick.AddListener(OnFAQClick);
-        exitButton.onClick.AddListener(OnExitClick);
+        InitializeButtons();
+
+        // Настройка текста кнопки
+        SetupButtonText();
+    }
+
+    private void InitializeButtons()
+    {
+        if (playButton != null && settingsButton != null && FAQbutton != null && exitButton != null)
+        {
+            playButton.onClick.AddListener(OnPlayClick);
+            settingsButton.onClick.AddListener(OnSettingsClick);
+            FAQbutton.onClick.AddListener(OnFAQClick);
+            exitButton.onClick.AddListener(OnExitClick);
+        }
+        else
+        {
+            Debug.LogError("Не все кнопки инициализированы!");
+        }
+    }
+
+    private void SetupButtonText()
+    {
+        if (buttonTextComponent != null)
+        {
+            if (PlayerPrefs.GetInt("NewGameStarted", 0) == 1)
+            {
+                buttonTextComponent.text = "Продолжить";
+            }
+            else
+            {
+                buttonTextComponent.text = "Новая игра";
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Компонент Text не найден в объекте textBTN!");
+        }
     }
 
     void OnPlayClick()
     {
         Debug.Log("Кнопка Play нажата");
-        SceneManager.LoadScene("FirstLevel");
+
+        try
+        {
+            if (PlayerPrefs.GetInt("NewGameStarted", 0) == 1)
+            {
+                SceneManager.LoadScene("CaveLevel");
+                Time.timeScale = 1f;
+                Cursor.visible = false;
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                Cursor.visible = false;
+                SceneManager.LoadScene("FirstLevel");
+            }
+            PlayerPrefs.DeleteKey("NewGameStarted");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"Ошибка при загрузке уровня: {e.Message}");
+        }
     }
 
     void OnExitClick()

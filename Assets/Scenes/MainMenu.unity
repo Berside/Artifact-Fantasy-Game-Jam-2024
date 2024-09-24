@@ -894,6 +894,7 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 132501351}
   settingsPanel: {fileID: 24434645}
   FAQ: {fileID: 360921395}
+  buttonTextComponent: {fileID: 1881536922}
 --- !u!1 &164635581
 GameObject:
   m_ObjectHideFlags: 0
