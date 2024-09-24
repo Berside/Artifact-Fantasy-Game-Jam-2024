@@ -1033,7 +1033,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.43, y: -6.77, z: -7377.831}
-  m_LocalScale: {x: 99.99015, y: 75.76381, z: 81.9759}
+  m_LocalScale: {x: 99.99015, y: 85.76381, z: 81.9759}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 330629203}
@@ -1923,7 +1923,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.2063255
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
