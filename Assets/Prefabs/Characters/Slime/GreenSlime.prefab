@@ -204,7 +204,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundCheck: {fileID: 875250930651473090}
-  attackRange: 0.8
+  attackRange: 1.2
   damage: 10
   attackCooldown: 2
   drawDetectionRadius: 1
