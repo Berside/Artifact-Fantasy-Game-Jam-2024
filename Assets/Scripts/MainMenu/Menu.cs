@@ -31,6 +31,8 @@ public class MenuCTRL : MonoBehaviour
     {
         PlayerPrefs.SetInt("NewGameStarted", 1);
         SceneManager.LoadScene("MainMenu");
+        PlayerPrefs.SetInt("final", 0);
+        PlayerPrefs.SetInt("NewGameStarted", 1);
     }
 
     void OnSettingsClick()
