@@ -41,7 +41,11 @@ public class MainMenuController : MonoBehaviour
     {
         if (buttonTextComponent != null)
         {
-            if (PlayerPrefs.GetInt("NewGameStarted", 0) == 1)
+            if (PlayerPrefs.GetInt("final", 0) == 1)
+            {
+                buttonTextComponent.text = "Перейти к финальному уровню";
+            }
+            else if (PlayerPrefs.GetInt("NewGameStarted", 0) == 1)
             {
                 buttonTextComponent.text = "Продолжить";
             }
@@ -55,14 +59,19 @@ public class MainMenuController : MonoBehaviour
             Debug.LogWarning("Компонент Text не найден в объекте textBTN!");
         }
     }
-
     void OnPlayClick()
     {
         Debug.Log("Кнопка Play нажата");
 
         try
         {
-            if (PlayerPrefs.GetInt("NewGameStarted", 0) == 1)
+            if (PlayerPrefs.GetInt("final", 0) == 1)
+            {
+                SceneManager.LoadScene("Final");
+                Time.timeScale = 1f;
+                Cursor.visible = false;
+            }
+            else if (PlayerPrefs.GetInt("NewGameStarted", 0) == 1)
             {
                 SceneManager.LoadScene("CaveLevel");
                 Time.timeScale = 1f;
@@ -70,9 +79,8 @@ public class MainMenuController : MonoBehaviour
             }
             else
             {
-                Time.timeScale = 1f;
-                Cursor.visible = false;
                 SceneManager.LoadScene("FirstLevel");
+                Time.timeScale = 1f;
             }
             PlayerPrefs.DeleteKey("NewGameStarted");
         }

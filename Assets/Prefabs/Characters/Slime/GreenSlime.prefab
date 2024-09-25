@@ -198,7 +198,7 @@ MonoBehaviour:
   idleJumpInterval: 2
   chaseJumpInterval: 1.5
   jumpForce: 5
-  detectionRadius: 10
+  detectionRadius: 6
   moveSpeed: 2
   playerLayer:
     serializedVersion: 2
@@ -222,8 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74282cb9d4867d41bb3c8dafe8489ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 20
-  maxHealth: 20
+  currentHealth: 50
+  maxHealth: 50
 --- !u!1 &7991201741521757596
 GameObject:
   m_ObjectHideFlags: 0

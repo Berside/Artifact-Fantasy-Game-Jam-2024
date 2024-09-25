@@ -9,6 +9,7 @@ public class LoadNewSceneOnEnter : MonoBehaviour
         {
             Debug.Log("Игрок вошел в зону для загрузки новой сцены");
             SceneManager.LoadScene("CaveLevel");
+            PlayerPrefs.SetInt("final", 0);
             PlayerPrefs.SetInt("NewGameStarted", 1);
         }
     }

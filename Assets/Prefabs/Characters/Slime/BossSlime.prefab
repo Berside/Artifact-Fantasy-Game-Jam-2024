@@ -228,15 +228,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleJumpInterval: 2
   chaseJumpInterval: 1.8
-  jumpForce: 3
-  detectionRadius: 15
-  moveSpeed: 2
+  jumpForce: 4
+  detectionRadius: 10
+  moveSpeed: 3
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
   groundCheck: {fileID: 3242526908073213568}
   attackRange: 6.5
-  damage: 10
+  damage: 25
   attackCooldown: 2
   drawDetectionRadius: 1
   drawAttackRadius: 1
@@ -245,7 +245,7 @@ MonoBehaviour:
   spawnInterval: 15
   minSlimesToSpawn: 4
   maxSlimesToSpawn: 8
-  spawnRadius: 2
+  spawnRadius: 3
 --- !u!114 &8182382099398764194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,5 +258,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74282cb9d4867d41bb3c8dafe8489ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 150
-  maxHealth: 150
+  currentHealth: 300
+  maxHealth: 300

@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  damage: 12
+  damage: 15
   fbTime: 3
 --- !u!95 &5634656477154599741
 Animator:
