@@ -20,6 +20,7 @@ public class MainMenuController : MonoBehaviour
 
         // Настройка текста кнопки
         SetupButtonText();
+        LoadPlayerPrefs();
     }
 
     private void InitializeButtons()
@@ -90,9 +91,23 @@ public class MainMenuController : MonoBehaviour
         }
     }
 
+    private void LoadPlayerPrefs()
+    {
+        PlayerPrefs.GetInt("final", 0);
+        PlayerPrefs.GetInt("NewGameStarted", 0);
+    }
+
+    private void SavePlayerPrefs()
+    {
+        PlayerPrefs.SetInt("final", PlayerPrefs.GetInt("final", 0));
+        PlayerPrefs.SetInt("NewGameStarted", PlayerPrefs.GetInt("NewGameStarted", 0));
+        PlayerPrefs.Save();
+    }
+
     void OnExitClick()
     {
         Debug.Log("Кнопка Exit нажата");
+        SavePlayerPrefs();
         Application.Quit(); // Эта команда завершает выполнение Unity
     }
 

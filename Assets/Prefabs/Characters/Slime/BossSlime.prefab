@@ -63,7 +63,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 60.72, y: 2.09, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 6, y: 8, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3242526908073213568}
@@ -236,16 +236,16 @@ MonoBehaviour:
     m_Bits: 8
   groundCheck: {fileID: 3242526908073213568}
   attackRange: 6.5
-  damage: 25
+  damage: 2
   attackCooldown: 2
   drawDetectionRadius: 1
   drawAttackRadius: 1
   drawGroundCheckRadius: 1
   slimePrefab: {fileID: 335495495670852571, guid: 2bf159e1e9b15ae46a47abfbd270dd53, type: 3}
-  spawnInterval: 15
-  minSlimesToSpawn: 4
-  maxSlimesToSpawn: 8
-  spawnRadius: 3
+  spawnInterval: 10
+  minSlimesToSpawn: 5
+  maxSlimesToSpawn: 10
+  spawnRadius: 6
 --- !u!114 &8182382099398764194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,5 +258,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74282cb9d4867d41bb3c8dafe8489ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 300
-  maxHealth: 300
+  currentHealth: 10
+  maxHealth: 10
