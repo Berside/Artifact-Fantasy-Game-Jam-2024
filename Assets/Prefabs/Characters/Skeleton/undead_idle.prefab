@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1004312719580752556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 862218835401742858}
+  m_Layer: 9
+  m_Name: WallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &862218835401742858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004312719580752556}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.76, y: 0.67, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3042995039630114649}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5147445059382526036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20,6 +51,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1160356261127867848, guid: eeab85e5c840a164b99f16991c8f2b71, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fd8bf7073e8ab8541ae02efbdd3316b0, type: 2}
     - target: {fileID: 7878350319992209165, guid: eeab85e5c840a164b99f16991c8f2b71, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
@@ -62,7 +97,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7878350319992209165, guid: eeab85e5c840a164b99f16991c8f2b71, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 862218835401742858}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: eeab85e5c840a164b99f16991c8f2b71, type: 3}
       insertIndex: -1
@@ -118,7 +156,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2870791127989622588}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 08b05f7c921ab8e45a08914611bf888d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -179,6 +217,12 @@ MonoBehaviour:
     m_Bits: 64
   attackCooldown: 1.5
   damage: 1
+  jumpForce: 5
+  wallCheckDistance: 0.5
+  wallCheckPoint: {fileID: 862218835401742858}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
   drawDetectionRadius: 1
   drawAttackDistance: 1
 --- !u!114 &5986495594735450239
@@ -195,3 +239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 3
   maxHealth: 3
+--- !u!4 &3042995039630114649 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: eeab85e5c840a164b99f16991c8f2b71, type: 3}
+  m_PrefabInstance: {fileID: 5147445059382526036}
+  m_PrefabAsset: {fileID: 0}

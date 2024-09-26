@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
@@ -31,8 +32,16 @@ public class Shooting : MonoBehaviour
 
         if (Input.GetKey(KeyCode.F) && !shot)
         {
+            gameObject.GetComponentInParent<Animator>().SetTrigger("Attack");
             shot = true;
-            Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+            StartCoroutine(ShootAfterDelay(0.5f));
         }
+    }
+
+    IEnumerator ShootAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);  // Wait for the specified delay (0.5s in this case)
+        Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);  // Instantiate the bullet
+        shot = false;  // Reset the shot flag to allow for subsequent shots
     }
 }

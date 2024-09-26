@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SkeletonAI : MonoBehaviour
@@ -14,6 +15,14 @@ public class SkeletonAI : MonoBehaviour
     public float attackCooldown = 1.5f; // Time between attacks
     public int damage = 10;             // Amount of damage the skeleton deals
 
+    public float jumpForce = 5f;        // Force applied for jumping
+    public float wallCheckDistance = 0.5f;  // Distance to check for a wall in front
+    public Transform wallCheckPoint;    // Point from where we check for obstacles (in front of the skeleton)
+    public LayerMask groundLayer;       // Layer for detecting ground (for jumping)
+
+    public bool drawDetectionRadius;
+    public bool drawAttackDistance;
+
     protected Transform player;
     protected bool isChasing = false;
     protected bool isRoaming = true;
@@ -22,10 +31,8 @@ public class SkeletonAI : MonoBehaviour
     protected float roamTimeCounter = 0f; // Counter for roaming duration
     protected int roamDirection = 1;      // 1 for right, -1 for left
 
-    public bool drawDetectionRadius;
-    public bool drawAttackDistance;
-
-    protected Rigidbody2D rb;
+    private bool isGrounded = true;   // Check if the skeleton is on the ground
+    private Rigidbody2D rb;
 
     void Start()
     {
@@ -35,6 +42,9 @@ public class SkeletonAI : MonoBehaviour
 
     void Update()
     {
+        // Check if skeleton is on the ground
+        isGrounded = Physics2D.OverlapCircle(transform.position, 0.1f, groundLayer);
+
         player = DetectPlayer();
 
         if (player != null && CanSeePlayer())
@@ -49,6 +59,12 @@ public class SkeletonAI : MonoBehaviour
                 isChasing = false;
             }
             Roam();
+        }
+
+        // Check if there's a wall in front and jump if needed
+        if (IsWallInFront() && isGrounded)
+        {
+            Jump();
         }
     }
 
@@ -156,6 +172,7 @@ public class SkeletonAI : MonoBehaviour
     {
         if (Time.time >= lastAttackTime + attackCooldown)
         {
+            gameObject.GetComponent<Animator>().SetTrigger("Attack");
             // Damage the player if within attack distance
             if (Vector2.Distance(transform.position, player.position) <= attackDistance)
             {
@@ -164,6 +181,21 @@ public class SkeletonAI : MonoBehaviour
                 lastAttackTime = Time.time;
             }
         }
+    }
+
+    // Check if there's a wall in front of the skeleton
+    bool IsWallInFront()
+    {
+        Vector2 direction = isFacingRight ? Vector2.right : Vector2.left;
+        RaycastHit2D hit = Physics2D.Raycast(wallCheckPoint.position, direction, wallCheckDistance, obstacleLayer);
+
+        return hit.collider != null; // True if a wall or obstacle is detected
+    }
+
+    // Make the skeleton jump
+    void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 
     // Draw gizmos for detection radius in the editor

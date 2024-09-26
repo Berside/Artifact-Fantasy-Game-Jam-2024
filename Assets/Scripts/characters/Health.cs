@@ -10,28 +10,65 @@ public class Health : MonoBehaviour
     private bool _godmode = false;
     private Rigidbody2D rb;
 
+    private Animator _animator;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     public void takeDamage(float damage)
     {
         if (!_godmode)
             currentHealth -= damage;
+
+        _animator.SetTrigger("Hurt");
+
         if (currentHealth <= 0)
         {
+            float delay = GetAnimationClipLength("Death");
+            print(delay);
             if (gameObject.tag == "Enemy")
             {
-                Destroy(gameObject);
+                _animator.SetTrigger("Death");
+                StartCoroutine(destroyGameObject(delay));
             }
             else if (gameObject.tag == "Player")
             {
-                // make something on player death
-                Destroy(gameObject);
+                _animator.SetTrigger("Death");
+                StartCoroutine(playerDeath(delay));
             }
         }
+    }
+    IEnumerator playerDeath(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        // write here what you want to happen after player's death
+
+        Destroy(gameObject);
+    }
+    IEnumerator destroyGameObject(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
+    }
+    public float GetAnimationClipLength(string clipName)
+    {
+        // Loop through all animation clips in the Animator
+        foreach (AnimationClip clip in _animator.runtimeAnimatorController.animationClips)
+        {
+            // Check if the clip name matches the provided name
+            if (clip.name == clipName)
+            {
+                return clip.length;  // Return the length in seconds
+            }
+        }
+
+        // Return 0 if the clip was not found
+        Debug.LogWarning("Animation clip not found: " + clipName);
+        return 0f;
     }
 
     public void enable_godmode()
@@ -46,6 +83,7 @@ public class Health : MonoBehaviour
     {
         _godmode = godmode;
     }
+
 
     public void heal(float restore)
     {
