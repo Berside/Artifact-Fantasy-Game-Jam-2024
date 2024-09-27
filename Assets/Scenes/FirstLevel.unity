@@ -567,7 +567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &112635654
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112635652}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -603,7 +603,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0418\u0433\u0440\u0430\u0442\u044C"
+  m_Text: "\u041D\u0430\u0447\u0430\u0442\u044C \u0443\u0440\u043E\u0432\u0435\u043D\u044C
+    \u0437\u0430\u043D\u043E\u0432\u043E"
 --- !u!222 &112635655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -755,10 +756,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 29
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2319,8 +2320,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076294, y: -241}
-  m_SizeDelta: {x: 406.7682, y: 74.4328}
+  m_AnchoredPosition: {x: 0.0000076294, y: -234.1}
+  m_SizeDelta: {x: 466.2195, y: 104.1584}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &313658942
 MonoBehaviour:
@@ -2944,8 +2945,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 6.000018, y: 290.0002}
-  m_SizeDelta: {x: 511.4, y: 68.12}
+  m_AnchoredPosition: {x: -0.000025988, y: 192}
+  m_SizeDelta: {x: 602.355, y: 121.3619}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &406019827
 GameObject:
@@ -50785,6 +50786,7 @@ MonoBehaviour:
   exitButton: {fileID: 391825691}
   mainMenuPanel: {fileID: 835966714}
   settingsPanel: {fileID: 880371247}
+  "pauseMenu\u0421": {fileID: 175796425}
 --- !u!1 &844273296
 GameObject:
   m_ObjectHideFlags: 0
@@ -55997,7 +55999,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1503826878}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -56045,8 +56047,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 690, y: 85}
-  m_SizeDelta: {x: 511.37, y: 58.6}
+  m_AnchoredPosition: {x: 0.000035763, y: 474.57}
+  m_SizeDelta: {x: 602.355, y: 121.3619}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1521446382
 GameObject:
@@ -59719,8 +59721,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 6, y: 361.8}
-  m_SizeDelta: {x: 511.4, y: 58.6}
+  m_AnchoredPosition: {x: 0.000035763, y: 336}
+  m_SizeDelta: {x: 602.355, y: 121.3619}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2116987741
 GameObject:

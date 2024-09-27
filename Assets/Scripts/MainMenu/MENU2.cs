@@ -9,6 +9,7 @@ public class MenuCTRLLL : MonoBehaviour
     public Button exitButton;
     public GameObject mainMenuPanel;
     public GameObject settingsPanel;
+    public GameObject pauseMenu—;
 
     void Start()
     {
@@ -24,8 +25,11 @@ public class MenuCTRLLL : MonoBehaviour
 
     void OnPlayClick()
     {
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+        pauseMenu—.SetActive(false);
     }
+
 
     void OnExitClick()
     {

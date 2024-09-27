@@ -15,5 +15,6 @@ public class InstructionManager : MonoBehaviour
     void StartGame()
     {
         instructionPanel.SetActive(false);
+        Cursor.visible = false;
     }
 }
