@@ -683,9 +683,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: Vertical
-    m_EventTreshold: 0.001
   - m_ConditionMode: 1
     m_ConditionEvent: Horizontal
     m_EventTreshold: 0

@@ -42,6 +42,5 @@ public class Shooting : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);  // Wait for the specified delay (0.5s in this case)
         Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);  // Instantiate the bullet
-        shot = false;  // Reset the shot flag to allow for subsequent shots
     }
 }

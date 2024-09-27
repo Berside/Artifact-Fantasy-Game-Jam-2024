@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -95,7 +95,385 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: undead_idle_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 879b4a7c87cf00e49aa931d15aa475e4
+      internalID: 1389712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 0
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9534671deca4b1c4ea35b3cbeae2d96a
+      internalID: -2084809021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 0
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aae5a8fb262a9e41800c64b608e924b
+      internalID: 496401712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 0
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4fd5b70d1d96c64c9ea756a628d9718
+      internalID: -293911052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 0
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58099a212e4d68a45aa7aee016708284
+      internalID: 637602971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 0
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 868e2093da67adc41b50bb866d47a388
+      internalID: -1582873978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 0
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe10e436b856280439ac7713257fdfe5
+      internalID: 407696653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 0
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0deab850a3fb7b4fadccf0cc0469ff9
+      internalID: 1289507485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 0
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d7446b4393cf74e977d6ad2da083a9
+      internalID: 564294443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 0
+        width: 29
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b3dbf84e9cb67e4eb6cfd3a4b27c745
+      internalID: -1315037127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 0
+        width: 29
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0656980089612d4cbd3bbc34bac1641
+      internalID: 689955108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 0
+        width: 29
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f679e0b7cc283e49b32f294adc0949b
+      internalID: -1279230920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 0
+        width: 29
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcdc752d6893ff744bef7cbdddfe5f0e
+      internalID: -403665200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 0
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3f47fcbaca5bb4796701c595a5a311
+      internalID: 429441232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 0
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdd1ae97818e074cac0cc1fc9816e45
+      internalID: 1019508621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 0
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9235070b1fece954c8ed5dcd5c29ab5d
+      internalID: 1797236349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 0
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3728dd5204077fe45a15d4e116ddf3b6
+      internalID: 610313943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead_idle_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 0
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d0782f6b3402ad438130f1ace2ff02a
+      internalID: -1294876389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +484,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      undead_idle_sheet_0: 1389712
+      undead_idle_sheet_1: -2084809021
+      undead_idle_sheet_10: 689955108
+      undead_idle_sheet_11: -1279230920
+      undead_idle_sheet_12: -403665200
+      undead_idle_sheet_13: 429441232
+      undead_idle_sheet_14: 1019508621
+      undead_idle_sheet_15: 1797236349
+      undead_idle_sheet_16: 610313943
+      undead_idle_sheet_17: -1294876389
+      undead_idle_sheet_2: 496401712
+      undead_idle_sheet_3: -293911052
+      undead_idle_sheet_4: 637602971
+      undead_idle_sheet_5: -1582873978
+      undead_idle_sheet_6: 407696653
+      undead_idle_sheet_7: 1289507485
+      undead_idle_sheet_8: 564294443
+      undead_idle_sheet_9: -1315037127
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
