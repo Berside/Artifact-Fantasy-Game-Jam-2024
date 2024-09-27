@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -43,9 +44,8 @@ public class Health : MonoBehaviour
     IEnumerator playerDeath(float delay)
     {
         yield return new WaitForSeconds(delay);
-        // write here what you want to happen after player's death
-
         Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     IEnumerator destroyGameObject(float delay)
     {

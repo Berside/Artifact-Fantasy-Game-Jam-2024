@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bullet : MonoBehaviour
 {
@@ -28,14 +30,19 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Health objectHealth = collision.GetComponent<Health>();
+        Health objectHealth = other.GetComponent<Health>();
 
-        if (objectHealth != null && collision.tag == "Enemy")
+        if (objectHealth != null && other.CompareTag("Enemy"))
         {
             objectHealth.takeDamage(damage);
         }
-        Destroy(gameObject);
+
+        if (!other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
+
 }

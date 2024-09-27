@@ -243,8 +243,8 @@ MonoBehaviour:
   drawGroundCheckRadius: 1
   slimePrefab: {fileID: 335495495670852571, guid: 2bf159e1e9b15ae46a47abfbd270dd53, type: 3}
   spawnInterval: 10
-  minSlimesToSpawn: 5
-  maxSlimesToSpawn: 10
+  minSlimesToSpawn: 3
+  maxSlimesToSpawn: 5
   spawnRadius: 6
 --- !u!114 &8182382099398764194
 MonoBehaviour:
