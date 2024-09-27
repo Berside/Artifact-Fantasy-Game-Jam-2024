@@ -39,7 +39,7 @@ public class Bullet : MonoBehaviour
             objectHealth.takeDamage(damage);
         }
 
-        if (!other.CompareTag("Player"))
+        if (!other.CompareTag("Player") && !other.CompareTag("Fireball"))
         {
             Destroy(gameObject);
         }

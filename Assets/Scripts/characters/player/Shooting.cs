@@ -63,7 +63,6 @@ public class Shooting : MonoBehaviour
         Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
         yield return new WaitForSeconds(0.07f);
         Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
-        shot = false;
     }
 
     IEnumerator ShootLeftAndRight(float delay)
@@ -78,7 +77,6 @@ public class Shooting : MonoBehaviour
         Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
         yield return new WaitForSeconds(0.06f);
         Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
-        shot = false;
     }
 
 
