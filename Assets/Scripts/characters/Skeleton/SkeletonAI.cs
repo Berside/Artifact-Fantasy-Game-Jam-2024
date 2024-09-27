@@ -43,33 +43,36 @@ public class SkeletonAI : MonoBehaviour
     void Update()
     {
         // Check if skeleton is on the ground
-        isGrounded = Physics2D.OverlapCircle(transform.position, 0.1f, groundLayer);
-
-        player = DetectPlayer();
-
-        if (GetComponent<Health>().currentHealth < 0)
+        if (GetComponent<Health>().currentHealth > 0)
         {
-            GetComponent<Animator>().SetBool("Dead", true);
-        }
+            isGrounded = Physics2D.OverlapCircle(transform.position, 0.1f, groundLayer);
 
-        if (player != null && CanSeePlayer())
-        {
-            ChasePlayer();
-        }
-        else
-        {
-            if (isChasing)
+            player = DetectPlayer();
+
+            if (GetComponent<Health>().currentHealth < 0)
             {
-                // Player out of range, return to idle (roaming) state
-                isChasing = false;
+                GetComponent<Animator>().SetBool("Dead", true);
             }
-            Roam();
-        }
 
-        // Check if there's a wall in front and jump if needed
-        if (IsWallInFront() && isGrounded)
-        {
-            Jump();
+            if (player != null && CanSeePlayer())
+            {
+                ChasePlayer();
+            }
+            else
+            {
+                if (isChasing)
+                {
+                    // Player out of range, return to idle (roaming) state
+                    isChasing = false;
+                }
+                Roam();
+            }
+
+            // Check if there's a wall in front and jump if needed
+            if (IsWallInFront() && isGrounded)
+            {
+                Jump();
+            }
         }
     }
 

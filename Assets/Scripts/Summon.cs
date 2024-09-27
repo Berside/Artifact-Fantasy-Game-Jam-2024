@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EntitySummoner : MonoBehaviour
 {
-    public int maxCalls = 5;
+    public int maxCalls;
     public float callInterval = 10f;
     public GameObject entityPrefab;
     public Transform spawnPoint;
@@ -17,16 +17,13 @@ public class EntitySummoner : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log($"Current Calls: {currentCalls}, Can Call: {canCall}");
         CheckCallAvailability();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"OnTriggerEnter called. Other tag: {other.gameObject.tag}");
         if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Player entered trigger zone");
             SummonEntity();
         }
     }
@@ -35,7 +32,6 @@ public class EntitySummoner : MonoBehaviour
     {
         if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Player pressed E inside trigger zone");
             SummonEntity();
         }
     }
@@ -44,23 +40,20 @@ public class EntitySummoner : MonoBehaviour
     {
         if (!canCall && Time.time >= nextCallTime)
         {
-            Debug.Log("Call availability reset");
             canCall = true;
-            currentCalls = 0;
+            //currentCalls = 0;
             nextCallTime = Time.time + callInterval;
-            Debug.Log($"Next call time set to: {nextCallTime}");
         }
     }
 
     private void SummonEntity()
     {
-        if (entityPrefab != null && canCall)
+        if (entityPrefab != null && canCall && currentCalls < maxCalls)
         {
             Vector3 spawnPosition = CalculateSpawnPosition();
             Instantiate(entityPrefab, spawnPosition, Quaternion.identity);
             IncrementCalls();
             ResetCallTimer();
-            Debug.Log("Entity summoned");
         }
         else
         {
@@ -71,18 +64,15 @@ public class EntitySummoner : MonoBehaviour
     private void IncrementCalls()
     {
         currentCalls++;
-        Debug.Log($"Incremented calls. Current: {currentCalls}");
         if (currentCalls >= maxCalls)
         {
             canCall = false;
-            Debug.Log($"Reached call limit ({maxCalls}). Stopping calls for {callInterval} seconds.");
         }
     }
 
     private void ResetCallTimer()
     {
         nextCallTime = Time.time + callInterval;
-        Debug.Log($"Reset call timer to: {nextCallTime}");
     }
 
     private Vector3 CalculateSpawnPosition()

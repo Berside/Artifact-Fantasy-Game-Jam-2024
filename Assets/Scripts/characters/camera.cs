@@ -5,6 +5,7 @@ using UnityEngine;
 public class camera : MonoBehaviour
 {
     public float dumping;
+    public float height = 0; 
     private Transform player;
 
     void Start()
@@ -16,7 +17,7 @@ public class camera : MonoBehaviour
     {
         if (player != null) {
             Vector3 target;
-            target = new Vector3(player.position.x, player.position.y, transform.position.z);
+            target = new Vector3(player.position.x, player.position.y + height, transform.position.z);
             Vector3 currentPosition = Vector3.Lerp(transform.position, target, dumping * Time.deltaTime);
             transform.position = currentPosition;
         }
