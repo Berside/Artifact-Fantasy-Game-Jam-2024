@@ -14,9 +14,11 @@ public class camera : MonoBehaviour
 
     void Update()
     {
-        Vector3 target;
-        target = new Vector3(player.position.x, player.position.y, transform.position.z);
-        Vector3 currentPosition = Vector3.Lerp(transform.position, target, dumping * Time.deltaTime);
-        transform.position = currentPosition;
+        if (player != null) {
+            Vector3 target;
+            target = new Vector3(player.position.x, player.position.y, transform.position.z);
+            Vector3 currentPosition = Vector3.Lerp(transform.position, target, dumping * Time.deltaTime);
+            transform.position = currentPosition;
+        }
     }
 }

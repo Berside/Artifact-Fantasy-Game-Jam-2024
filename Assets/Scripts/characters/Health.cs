@@ -7,7 +7,6 @@ public class Health : MonoBehaviour
     public float currentHealth;
     public float maxHealth;
 
-    private bool _godmode = false;
     private Rigidbody2D rb;
 
     private Animator _animator;
@@ -21,8 +20,7 @@ public class Health : MonoBehaviour
 
     public void takeDamage(float damage)
     {
-        if (!_godmode)
-            currentHealth -= damage;
+        currentHealth -= damage;
 
         _animator.SetTrigger("Hurt");
 
@@ -69,19 +67,6 @@ public class Health : MonoBehaviour
         // Return 0 if the clip was not found
         Debug.LogWarning("Animation clip not found: " + clipName);
         return 0f;
-    }
-
-    public void enable_godmode()
-    {
-        _godmode = true;
-    }
-    public void disable_godmode()
-    {
-        _godmode = false;
-    }
-    public void set_godmode(bool godmode)
-    {
-        _godmode = godmode;
     }
 
 
