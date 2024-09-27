@@ -7,6 +7,7 @@ public class Shooting : MonoBehaviour
 {
     public Transform shootingPoint;
     public GameObject bulletPrefab;
+    public int level; 
 
     public float ShootingCooldown;
     private float ShootingCooldownTimer = 0;
@@ -34,7 +35,18 @@ public class Shooting : MonoBehaviour
         {
             gameObject.GetComponentInParent<Animator>().SetTrigger("Attack");
             shot = true;
-            StartCoroutine(ShootAfterDelay(0.5f));
+            switch (level)
+            {
+                case 1:
+                    StartCoroutine(ShootAfterDelay(0.5f));
+                    break;
+                case 2:
+                    StartCoroutine(ShootSpread(0.7f));
+                    break;
+                case 3:
+                    StartCoroutine(ShootLeftAndRight(0.5f));
+                    break;
+            }
         }
     }
 
@@ -44,4 +56,32 @@ public class Shooting : MonoBehaviour
         Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);  // Instantiate the bullet
         shot = false;  // Reset the shot flag to allow for subsequent shots
     }
+    IEnumerator ShootSpread(float delay)
+    {
+        yield return new WaitForSeconds(delay); // Ожидаем указанное время
+        Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+        yield return new WaitForSeconds(0.07f);
+        Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+        yield return new WaitForSeconds(0.07f);
+        Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+        shot = false;
+    }
+
+    IEnumerator ShootLeftAndRight(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+        yield return new WaitForSeconds(0.06f);
+        Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+        yield return new WaitForSeconds(0.06f);
+        Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+        yield return new WaitForSeconds(0.06f);
+        Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+        yield return new WaitForSeconds(0.06f);
+        Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+        shot = false;
+    }
+
+
+
 }
