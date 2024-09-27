@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class DisplayHealth : MonoBehaviour
 {
-    public RectTransform healthBar; // The red rectangle (health bar)
+    public Image healthBar; // The red rectangle (health bar)
     public Text healthText;         // The text that displays the health number
     public Transform player;
-    public Toggle toggle;
 
 
     private Health playerHealth;
@@ -17,7 +16,6 @@ public class DisplayHealth : MonoBehaviour
     void Start()
     {
         playerHealth = player.GetComponent<Health>();
-        toggle.onValueChanged.AddListener(ToggleHealthBar);
     }
 
     private void Update()
@@ -25,17 +23,11 @@ public class DisplayHealth : MonoBehaviour
         UpdateHealthBar();
     }
 
-    void ToggleHealthBar(bool isGodmode)
-    {
-        playerHealth.set_godmode(isGodmode);
-    }
-
     // Update the health bar's size and text
     void UpdateHealthBar()
     {
         // Update the size of the red rectangle based on health percentage
-        float healthPercentage = (float)playerHealth.currentHealth / playerHealth.maxHealth;
-        healthBar.localScale = new Vector3(healthPercentage, 1f, 1f);
+        healthBar.fillAmount = Mathf.Clamp((float)playerHealth.currentHealth / playerHealth.maxHealth, 0, 1);
 
         // Update the health number to the left of the rectangle
         healthText.text = playerHealth.currentHealth.ToString();
