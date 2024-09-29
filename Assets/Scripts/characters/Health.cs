@@ -31,13 +31,23 @@ public class Health : MonoBehaviour
             print(delay);
             if (gameObject.tag == "Enemy")
             {
-                _animator.SetTrigger("Death");
-                StartCoroutine(destroyGameObject(delay));
+                if (gameObject.layer == 10)
+                {
+                    _animator.SetTrigger("Death");
+                    StartCoroutine(SceneM(delay));
+
+                }
+                else
+                {
+                    _animator.SetTrigger("Death");
+                    StartCoroutine(destroyGameObject(delay));
+                }
             }
             else if (gameObject.tag == "Player")
             {
                 _animator.SetTrigger("Death");
                 StartCoroutine(playerDeath(delay));
+                
             }
         }
     }
@@ -46,6 +56,11 @@ public class Health : MonoBehaviour
         yield return new WaitForSeconds(delay);
         Destroy(gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    IEnumerator SceneM(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("MainMenu");
     }
     IEnumerator destroyGameObject(float delay)
     {

@@ -104,6 +104,7 @@ MonoBehaviour:
   flySpeed: 2
   damage: 1
   damageCooldown: 2
+  attackDistance: 0.5
 --- !u!50 &8120059080118939454
 Rigidbody2D:
   serializedVersion: 4
@@ -209,5 +210,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74282cb9d4867d41bb3c8dafe8489ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 4
-  maxHealth: 4
+  currentHealth: 2
+  maxHealth: 2

@@ -7,6 +7,7 @@ public class FlyAfterGroundContact : MonoBehaviour
     public float flySpeed = 2f;    // Speed at which the object flies to the target
     public float damage;
     public float damageCooldown;
+    public float attackDistance;
 
     private float time = 0;
     private Transform target;       // The target to fly towards
@@ -50,6 +51,7 @@ public class FlyAfterGroundContact : MonoBehaviour
         {
             FlyTowardsTarget();
         }
+        AttackPlayer();
 
         time += Time.deltaTime;
     }
@@ -59,5 +61,15 @@ public class FlyAfterGroundContact : MonoBehaviour
         // Move towards the target at a constant speed
         Vector3 direction = (target.position - transform.position).normalized;
         transform.position += direction * flySpeed * Time.deltaTime;
+    }
+    public void AttackPlayer()
+    {
+            // Damage the player if within attack distance
+            if (Vector2.Distance(transform.position, target.position) <= attackDistance && time >= damageCooldown)
+            {
+                target.GetComponent<Health>().takeDamage(damage);
+                time = 0;
+            
+            }
     }
 }

@@ -109570,8 +109570,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad253a65454b4904895c48fa194c375d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCalls: 2
-  callInterval: 30
+  maxCalls: 1
+  callInterval: 1
   entityPrefab: {fileID: 8927817588108721122, guid: 03636ff8adc0007458764b5ab793df3a, type: 3}
   spawnPoint: {fileID: 1354432847}
   minDistance: 5
@@ -109609,7 +109609,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.203125}
+  m_Offset: {x: -0.027380228, y: 1.2974303}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -109620,7 +109620,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.09375, y: 2.40625}
+  m_Size: {x: 1.5501089, y: 2.5948606}
   m_EdgeRadius: 0
 --- !u!1001 &9167971884765163695
 PrefabInstance:
