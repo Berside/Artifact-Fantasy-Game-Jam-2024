@@ -95,7 +95,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: darkfairy_phase2_death_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 73
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f760595cd9fcf45a87a67d89e1c48e
+      internalID: 1207035648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_phase2_death_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 73
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f98daeae7db195744bd036d3423d7ee6
+      internalID: -882587676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_phase2_death_2
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 73
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3541b4dee760db24bb6c381ba1b8654e
+      internalID: -269792340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_phase2_death_3
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 73
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd7f51b26bcb554bbf87876fca76104
+      internalID: -1249191940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_phase2_death_4
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 73
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e961bd0122f9fc24d81b957c27f4af30
+      internalID: -1937486985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_phase2_death_6
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 73
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e1952725403f754da67c7749ae67d4e
+      internalID: 922274466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_phase2_death_10
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 73
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 189159bb281928f488e4a72831146285
+      internalID: 1958284892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_phase2_death_14
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 73
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f58fdc6b5cfc4ae4983be9cd6a521285
+      internalID: -1527905523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_phase2_death_19
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 9
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6677f3e81558f7b40b62c2cf6a8de03d
+      internalID: -254210751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_phase2_death_22
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 22
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba66a6feebad472498a91a5e15475fe6
+      internalID: 1934372117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_phase2_death_25
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 17
+        width: 32
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac476581759d25044955fcce707c512f
+      internalID: -1157950522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_phase2_death_31
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 12
+        width: 36
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6779016d9142ba429134031de6bed50
+      internalID: 408459776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_phase2_death_35
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 0
+        width: 101
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1332111914f86c449b9fa50dae0652d1
+      internalID: 1583420379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +379,44 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      darkfairy_phase2_death_0: 1207035648
+      darkfairy_phase2_death_1: -882587676
+      darkfairy_phase2_death_10: 1958284892
+      darkfairy_phase2_death_11: 234921853
+      darkfairy_phase2_death_12: -940392683
+      darkfairy_phase2_death_13: 1088130212
+      darkfairy_phase2_death_14: -1527905523
+      darkfairy_phase2_death_15: 749033390
+      darkfairy_phase2_death_16: 560134520
+      darkfairy_phase2_death_17: -1097659988
+      darkfairy_phase2_death_18: 377501154
+      darkfairy_phase2_death_19: -254210751
+      darkfairy_phase2_death_2: -269792340
+      darkfairy_phase2_death_20: -1092779332
+      darkfairy_phase2_death_21: -1913442734
+      darkfairy_phase2_death_22: 1934372117
+      darkfairy_phase2_death_23: 681854721
+      darkfairy_phase2_death_24: 215548588
+      darkfairy_phase2_death_25: -1157950522
+      darkfairy_phase2_death_26: 2045196662
+      darkfairy_phase2_death_27: 2095677433
+      darkfairy_phase2_death_28: 761099125
+      darkfairy_phase2_death_29: -153597614
+      darkfairy_phase2_death_3: -1249191940
+      darkfairy_phase2_death_30: -1815849374
+      darkfairy_phase2_death_31: 408459776
+      darkfairy_phase2_death_32: 1907952352
+      darkfairy_phase2_death_33: -493889595
+      darkfairy_phase2_death_34: -1397013634
+      darkfairy_phase2_death_35: 1583420379
+      darkfairy_phase2_death_36: 1068043465
+      darkfairy_phase2_death_4: -1937486985
+      darkfairy_phase2_death_5: -558495637
+      darkfairy_phase2_death_6: 922274466
+      darkfairy_phase2_death_7: 769205088
+      darkfairy_phase2_death_8: 1139601696
+      darkfairy_phase2_death_9: 1008870564
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

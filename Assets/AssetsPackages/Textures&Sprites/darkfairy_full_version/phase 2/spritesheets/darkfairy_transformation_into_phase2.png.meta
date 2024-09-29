@@ -95,7 +95,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 73
+        width: 20
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2201c9362d6655b478526c8e5c4719ac
+      internalID: 187470790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_1
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 73
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff912d907a2bb1a4ea4d83ab607c98d9
+      internalID: 1725367652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 73
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d1801097b7ae0419ae8fcb443ef013
+      internalID: -589906855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 73
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c04971ea37495e41acb26b79cab9896
+      internalID: 905975048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_4
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 73
+        width: 36
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76e03c43ea9ff24a8f0c930bd3a3a25
+      internalID: 795240212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_5
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 73
+        width: 36
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba43de48c49d084ab6dea66047d3d1e
+      internalID: 214626839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_6
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 73
+        width: 30
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 503c0498a322e22438a9bec0a5d0b720
+      internalID: 71921622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_8
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 68
+        width: 30
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f98502ef2923f044fa204d2cdc7aea81
+      internalID: 2117677175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_9
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 8
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f298f2436f3314e9cb5f8a58d23508
+      internalID: 1835520976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_10
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 8
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9454a7ef07d4f934ab9f8a7cc4c53289
+      internalID: 101187763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_11
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 8
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef31e2a3e7d53794b8053e29738683ac
+      internalID: -956802272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_12
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 8
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a147d00e223a7924091d7b8827aa2e3e
+      internalID: 1630459090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_13
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 8
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b2efd80537c99146ae83db97e30f169
+      internalID: 476273526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_14
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 8
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368171714ceb1cb4da930dd11dca9ff6
+      internalID: 1902290195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_15
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 8
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c9953ec2e76a61419abd65ca19ff355
+      internalID: -329096685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_transformation_into_phase2_16
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 8
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c1bceeb4f635343ac3991b7fb42c0f
+      internalID: 316487343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +442,24 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      darkfairy_transformation_into_phase2_0: 187470790
+      darkfairy_transformation_into_phase2_1: 1725367652
+      darkfairy_transformation_into_phase2_10: 101187763
+      darkfairy_transformation_into_phase2_11: -956802272
+      darkfairy_transformation_into_phase2_12: 1630459090
+      darkfairy_transformation_into_phase2_13: 476273526
+      darkfairy_transformation_into_phase2_14: 1902290195
+      darkfairy_transformation_into_phase2_15: -329096685
+      darkfairy_transformation_into_phase2_16: 316487343
+      darkfairy_transformation_into_phase2_2: -589906855
+      darkfairy_transformation_into_phase2_3: 905975048
+      darkfairy_transformation_into_phase2_4: 795240212
+      darkfairy_transformation_into_phase2_5: 214626839
+      darkfairy_transformation_into_phase2_6: 71921622
+      darkfairy_transformation_into_phase2_7: 1956901116
+      darkfairy_transformation_into_phase2_8: 2117677175
+      darkfairy_transformation_into_phase2_9: 1835520976
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
