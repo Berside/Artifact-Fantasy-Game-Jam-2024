@@ -15,11 +15,13 @@ public class BossSlimeAI : SlimeAI
     new void Update()
     {
         base.Update();
-
-        if (Time.time > nextSpawnTime && !isSpawning)
+        if (GetComponent<Health>().currentHealth > 0)
         {
-            StartCoroutine(SpawnSlimes());
-            nextSpawnTime = Time.time + spawnInterval;
+            if (Time.time > nextSpawnTime && !isSpawning)
+            {
+                StartCoroutine(SpawnSlimes());
+                nextSpawnTime = Time.time + spawnInterval;
+            }
         }
     }
 

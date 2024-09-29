@@ -42,34 +42,37 @@ public class SkeletonBossAI : MonoBehaviour
 
     void Update()
     {
-        // Check if skeleton is on the ground
-        isGrounded = Physics2D.OverlapCircle(transform.position, 0.1f, groundLayer);
-
-        player = DetectPlayer();
-
-        if (player != null && CanSeePlayer())
+        if (GetComponent<Health>().currentHealth > 0)
         {
-            ChasePlayer();
-        }
-        else
-        {
-            if (isChasing)
+            // Check if skeleton is on the ground
+            isGrounded = Physics2D.OverlapCircle(transform.position, 0.1f, groundLayer);
+
+            player = DetectPlayer();
+
+            if (player != null && CanSeePlayer())
             {
-                isChasing = false;
+                ChasePlayer();
             }
-            Roam();
-        }
+            else
+            {
+                if (isChasing)
+                {
+                    isChasing = false;
+                }
+                Roam();
+            }
 
-        if (IsWallInFront() && isGrounded)
-        {
-            Jump();
-        }
+            if (IsWallInFront() && isGrounded)
+            {
+                Jump();
+            }
 
-        // Check if it's time to spawn skeleton minions
-        if (Time.time >= lastSpawnTime + spawnCooldown)
-        {
-            StartCoroutine(SpawnSkeletons());
-            lastSpawnTime = Time.time;
+            // Check if it's time to spawn skeleton minions
+            if (Time.time >= lastSpawnTime + spawnCooldown)
+            {
+                StartCoroutine(SpawnSkeletons());
+                lastSpawnTime = Time.time;
+            }
         }
     }
 
@@ -80,6 +83,7 @@ public class SkeletonBossAI : MonoBehaviour
             roamTimeCounter -= Time.deltaTime;
 
             rb.velocity = new Vector2(roamDirection * roamSpeed, rb.velocity.y);
+            animator.SetBool("isWalking", true);
 
             if ((roamDirection > 0 && !isFacingRight) || (roamDirection < 0 && isFacingRight))
             {
@@ -88,6 +92,7 @@ public class SkeletonBossAI : MonoBehaviour
 
             if (roamTimeCounter <= 0)
             {
+                animator.SetBool("isWalking", false);
                 ChooseNewDirection();
             }
         }
@@ -113,7 +118,9 @@ public class SkeletonBossAI : MonoBehaviour
         else
         {
             rb.velocity = Vector2.zero;
-            AttackPlayer();
+            animator.SetTrigger("Attack");
+            animator.SetBool("isWalking", false);
+            StartCoroutine(AttackPlayer());
         }
     }
 
@@ -121,6 +128,7 @@ public class SkeletonBossAI : MonoBehaviour
     {
         Vector3 direction = (target - transform.position).normalized;
         rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
+        animator.SetBool("isWalking", true);
 
         if ((direction.x > 0 && !isFacingRight) || (direction.x < 0 && isFacingRight))
         {
@@ -159,11 +167,11 @@ public class SkeletonBossAI : MonoBehaviour
         return true;
     }
 
-    void AttackPlayer()
+    IEnumerator AttackPlayer()
     {
+        yield return new WaitForSeconds(0.5f);
         if (Time.time >= lastAttackTime + attackCooldown)
         {
-            animator.SetTrigger("Attack");
 
             if (Vector2.Distance(transform.position, player.position) <= attackDistance)
             {

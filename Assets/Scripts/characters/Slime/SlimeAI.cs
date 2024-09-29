@@ -37,27 +37,30 @@ public class SlimeAI : MonoBehaviour
 
     protected void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, LayerMask.GetMask("Ground"));
-
-        if (Time.time > nextJumpTime && isGrounded)
+        if (GetComponent<Health>().currentHealth > 0)
         {
-            if (isIdle)
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, LayerMask.GetMask("Ground"));
+
+            if (Time.time > nextJumpTime && isGrounded)
             {
-                JumpIdle();
+                if (isIdle)
+                {
+                    JumpIdle();
+                }
+                else
+                {
+                    ChasePlayer();
+                }
+
+                nextJumpTime = Time.time + (isIdle ? idleJumpInterval : chaseJumpInterval);
             }
-            else
+
+            DetectPlayer();
+
+            if (!isIdle && player != null)
             {
-                ChasePlayer();
+                TryAttackPlayer();
             }
-
-            nextJumpTime = Time.time + (isIdle ? idleJumpInterval : chaseJumpInterval);
-        }
-
-        DetectPlayer();
-
-        if (!isIdle && player != null)
-        {
-            TryAttackPlayer();
         }
     }
 

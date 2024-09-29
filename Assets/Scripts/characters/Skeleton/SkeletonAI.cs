@@ -43,28 +43,36 @@ public class SkeletonAI : MonoBehaviour
     void Update()
     {
         // Check if skeleton is on the ground
-        isGrounded = Physics2D.OverlapCircle(transform.position, 0.1f, groundLayer);
-
-        player = DetectPlayer();
-
-        if (player != null && CanSeePlayer())
+        if (GetComponent<Health>().currentHealth > 0)
         {
-            ChasePlayer();
-        }
-        else
-        {
-            if (isChasing)
+            isGrounded = Physics2D.OverlapCircle(transform.position, 0.1f, groundLayer);
+
+            player = DetectPlayer();
+
+            if (GetComponent<Health>().currentHealth < 0)
             {
-                // Player out of range, return to idle (roaming) state
-                isChasing = false;
+                GetComponent<Animator>().SetBool("Dead", true);
             }
-            Roam();
-        }
 
-        // Check if there's a wall in front and jump if needed
-        if (IsWallInFront() && isGrounded)
-        {
-            Jump();
+            if (player != null && CanSeePlayer())
+            {
+                ChasePlayer();
+            }
+            else
+            {
+                if (isChasing)
+                {
+                    // Player out of range, return to idle (roaming) state
+                    isChasing = false;
+                }
+                Roam();
+            }
+
+            // Check if there's a wall in front and jump if needed
+            if (IsWallInFront() && isGrounded)
+            {
+                Jump();
+            }
         }
     }
 
@@ -78,6 +86,8 @@ public class SkeletonAI : MonoBehaviour
             // Move the skeleton in the current roam direction (left or right)
             rb.velocity = new Vector2(roamDirection * roamSpeed, rb.velocity.y);
 
+            GetComponent<Animator>().SetBool("isWalking", true);
+
             // Flip skeleton model based on movement direction
             if ((roamDirection > 0 && !isFacingRight) || (roamDirection < 0 && isFacingRight))
             {
@@ -87,6 +97,7 @@ public class SkeletonAI : MonoBehaviour
             // Change direction when roam duration is up
             if (roamTimeCounter <= 0)
             {
+                GetComponent<Animator>().SetBool("isWalking", false);
                 ChooseNewDirection();
             }
         }
@@ -117,7 +128,9 @@ public class SkeletonAI : MonoBehaviour
         {
             // Skeleton has reached attack distance, stop moving and attack
             rb.velocity = Vector2.zero;
-            AttackPlayer();
+            GetComponent<Animator>().SetBool("isWalking", false);
+            gameObject.GetComponent<Animator>().SetTrigger("Attack");
+            StartCoroutine(AttackPlayer());
         }
     }
 
@@ -126,6 +139,8 @@ public class SkeletonAI : MonoBehaviour
     {
         Vector3 direction = (target - transform.position).normalized;
         rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
+
+        GetComponent<Animator>().SetBool("isWalking", true);
 
         // Flip skeleton model based on movement direction
         if ((direction.x > 0 && !isFacingRight) || (direction.x < 0 && isFacingRight))
@@ -168,11 +183,11 @@ public class SkeletonAI : MonoBehaviour
     }
 
     // Attack the player if within attack range
-    void AttackPlayer()
+    IEnumerator AttackPlayer()
     {
+        yield return new WaitForSeconds(0.5f);
         if (Time.time >= lastAttackTime + attackCooldown)
         {
-            gameObject.GetComponent<Animator>().SetTrigger("Attack");
             // Damage the player if within attack distance
             if (Vector2.Distance(transform.position, player.position) <= attackDistance)
             {
