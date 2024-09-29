@@ -95,7 +95,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: darkfairy_spirit_death_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 90
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d706ab6b783d542a0ccd77f954a27d
+      internalID: -482921855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_spirit_death_1
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 89
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3627c95528c684d4c95d5b7fb9cd39a2
+      internalID: -937164894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_spirit_death_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 90
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16107b9780a170e4abedf3b620b4e433
+      internalID: 14923741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_spirit_death_3
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 90
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6554523a8d818184599310677acf06c8
+      internalID: -173640264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_spirit_death_4
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 90
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4212ecd4d41520c49834c3f9c1b59759
+      internalID: -733073856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_spirit_death_5
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 90
+        width: 28
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6150ca498b0e1c4b812c9d4cd9042af
+      internalID: 352665661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_spirit_death_7
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 90
+        width: 29
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58830edf62cf694b94080f2e01aa46d
+      internalID: 679036354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: darkfairy_spirit_death_6
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 89
+        width: 21
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6333f194d36ef5f4688d3726122cee79
+      internalID: -1627296116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +274,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      darkfairy_spirit_death_0: -482921855
+      darkfairy_spirit_death_1: -937164894
+      darkfairy_spirit_death_2: 14923741
+      darkfairy_spirit_death_3: -173640264
+      darkfairy_spirit_death_4: -733073856
+      darkfairy_spirit_death_5: 352665661
+      darkfairy_spirit_death_6: -1627296116
+      darkfairy_spirit_death_7: 679036354
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
