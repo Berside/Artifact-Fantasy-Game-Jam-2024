@@ -29,11 +29,12 @@ public class DealDamage : MonoBehaviour
             if (objectHealth != null && other.CompareTag("Player"))
             {
                 objectHealth.takeDamage(damage);
+                time = 0;
             }
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (time >= startDamageTime)
         {
@@ -42,6 +43,7 @@ public class DealDamage : MonoBehaviour
             if (objectHealth != null && other.CompareTag("Player"))
             {
                 objectHealth.takeDamage(damage);
+                time = 0;
             }
         }
     }
