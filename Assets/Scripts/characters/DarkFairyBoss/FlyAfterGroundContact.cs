@@ -64,12 +64,12 @@ public class FlyAfterGroundContact : MonoBehaviour
     }
     public void AttackPlayer()
     {
-            // Damage the player if within attack distance
-            if (Vector2.Distance(transform.position, target.position) <= attackDistance && time >= damageCooldown)
-            {
-                target.GetComponent<Health>().takeDamage(damage);
-                time = 0;
+        // Damage the player if within attack distance
+        if (Vector2.Distance(transform.position, target.position) <= attackDistance && time >= damageCooldown)
+        {
+            target.GetComponent<Health>().takeDamage(damage);
+            time = 0;
             
-            }
+        }
     }
 }
