@@ -13,11 +13,16 @@ public class EntitySummoner : MonoBehaviour
 
     private int currentCalls = 0;
     private bool canCall = true;
-    private float nextCallTime;
+    private float time = 0;
 
     private void Update()
     {
-        CheckCallAvailability();
+        time += Time.deltaTime;
+
+        if(!canCall && time >= callInterval)
+        {
+            canCall = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -36,43 +41,21 @@ public class EntitySummoner : MonoBehaviour
         }
     }
 
-    private void CheckCallAvailability()
-    {
-        if (!canCall && Time.time >= nextCallTime)
-        {
-            canCall = true;
-            //currentCalls = 0;
-            nextCallTime = Time.time + callInterval;
-        }
-    }
-
     private void SummonEntity()
     {
         if (entityPrefab != null && canCall && currentCalls < maxCalls)
         {
             Vector3 spawnPosition = CalculateSpawnPosition();
             Instantiate(entityPrefab, spawnPosition, Quaternion.identity);
-            IncrementCalls();
-            ResetCallTimer();
+
+            currentCalls++;
+            canCall = false;
+            time = 0;
         }
         else
         {
             Debug.LogError("Cannot summon entity. Entity prefab not assigned or call limit reached.");
         }
-    }
-
-    private void IncrementCalls()
-    {
-        currentCalls++;
-        if (currentCalls >= maxCalls)
-        {
-            canCall = false;
-        }
-    }
-
-    private void ResetCallTimer()
-    {
-        nextCallTime = Time.time + callInterval;
     }
 
     private Vector3 CalculateSpawnPosition()

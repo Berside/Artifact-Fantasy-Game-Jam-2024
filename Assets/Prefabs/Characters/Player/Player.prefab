@@ -167,7 +167,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!70 &2546187692161805451
@@ -219,6 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 2011183827569114123}
   bulletPrefab: {fileID: 7099999221913038276, guid: e0b5a037b5ad10d499837d8571dc7281, type: 3}
+  level: 0
   ShootingCooldown: 1
 --- !u!114 &6286993870046896149
 MonoBehaviour:
