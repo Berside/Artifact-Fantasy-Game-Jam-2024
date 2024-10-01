@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
 public class EntitySummoner : MonoBehaviour
 {
     public int maxCalls;
@@ -10,7 +10,7 @@ public class EntitySummoner : MonoBehaviour
     public float minDistance = 1f;
     public float maxDistance = 10f;
     public Vector3 spawnDirection;
-
+    public Text summonText;
     private int currentCalls = 0;
     private bool canCall = true;
     private float time = 0;
@@ -27,6 +27,10 @@ public class EntitySummoner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Player"))
+        {
+            ShowSummonText();
+        }
         if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
             SummonEntity();
@@ -35,9 +39,20 @@ public class EntitySummoner : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        if (other.CompareTag("Player"))
+        {
+            ShowSummonText();
+        }
         if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
             SummonEntity();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            HideSummonText();
         }
     }
 
@@ -73,4 +88,21 @@ public class EntitySummoner : MonoBehaviour
 
         return transform.position + (direction * distance) + offset;
     }
+    private void ShowSummonText()
+    {
+        if (summonText != null && !summonText.gameObject.activeSelf)
+        {
+            summonText.gameObject.SetActive(true);
+        }
+    }
+
+
+    private void HideSummonText()
+    {
+        if (summonText != null && summonText.gameObject.activeSelf)
+        {
+            summonText.gameObject.SetActive(false);
+        }
+    }
+
 }
