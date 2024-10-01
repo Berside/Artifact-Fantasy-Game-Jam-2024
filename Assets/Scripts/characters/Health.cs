@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     public float maxHealth;
 
     private Rigidbody2D rb;
+    private bool _isDead = false;
 
     private Animator _animator;
 
@@ -19,6 +20,11 @@ public class Health : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
+    public bool isDead()
+    {
+        return _isDead;
+    }
+
     public void takeDamage(float damage)
     {
         currentHealth -= damage;
@@ -27,19 +33,21 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            _isDead = true;
             float delay = GetAnimationClipLength("Death");
-            print(delay);
             if (gameObject.tag == "Enemy")
             {
                 if (gameObject.layer == 10)
                 {
                     _animator.SetTrigger("Death");
+                    _animator.SetBool("isDeath", true);
                     StartCoroutine(SceneM(delay));
 
                 }
                 else
                 {
                     _animator.SetTrigger("Death");
+                    _animator.SetBool("isDeath", true);
                     StartCoroutine(destroyGameObject(delay));
                 }
             }

@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour
     {
         Health objectHealth = other.GetComponent<Health>();
 
-        if (objectHealth != null && other.CompareTag("Enemy"))
+        if (objectHealth != null && other.CompareTag("Enemy") && !objectHealth.isDead())
         {
             objectHealth.takeDamage(damage);
         }

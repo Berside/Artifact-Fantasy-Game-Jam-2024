@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
 public class EntitySummoner : MonoBehaviour
 {
     public int maxCalls;
@@ -10,18 +10,27 @@ public class EntitySummoner : MonoBehaviour
     public float minDistance = 1f;
     public float maxDistance = 10f;
     public Vector3 spawnDirection;
-
+    public Text summonText;
     private int currentCalls = 0;
     private bool canCall = true;
-    private float nextCallTime;
+    private float time = 0;
 
     private void Update()
     {
-        CheckCallAvailability();
+        time += Time.deltaTime;
+
+        if(!canCall && time >= callInterval)
+        {
+            canCall = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Player"))
+        {
+            ShowSummonText();
+        }
         if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
             SummonEntity();
@@ -30,19 +39,20 @@ public class EntitySummoner : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        if (other.CompareTag("Player"))
+        {
+            ShowSummonText();
+        }
         if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
             SummonEntity();
         }
     }
-
-    private void CheckCallAvailability()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (!canCall && Time.time >= nextCallTime)
+        if (other.CompareTag("Player"))
         {
-            canCall = true;
-            //currentCalls = 0;
-            nextCallTime = Time.time + callInterval;
+            HideSummonText();
         }
     }
 
@@ -52,27 +62,15 @@ public class EntitySummoner : MonoBehaviour
         {
             Vector3 spawnPosition = CalculateSpawnPosition();
             Instantiate(entityPrefab, spawnPosition, Quaternion.identity);
-            IncrementCalls();
-            ResetCallTimer();
+
+            currentCalls++;
+            canCall = false;
+            time = 0;
         }
         else
         {
             Debug.LogError("Cannot summon entity. Entity prefab not assigned or call limit reached.");
         }
-    }
-
-    private void IncrementCalls()
-    {
-        currentCalls++;
-        if (currentCalls >= maxCalls)
-        {
-            canCall = false;
-        }
-    }
-
-    private void ResetCallTimer()
-    {
-        nextCallTime = Time.time + callInterval;
     }
 
     private Vector3 CalculateSpawnPosition()
@@ -90,4 +88,21 @@ public class EntitySummoner : MonoBehaviour
 
         return transform.position + (direction * distance) + offset;
     }
+    private void ShowSummonText()
+    {
+        if (summonText != null && !summonText.gameObject.activeSelf)
+        {
+            summonText.gameObject.SetActive(true);
+        }
+    }
+
+
+    private void HideSummonText()
+    {
+        if (summonText != null && summonText.gameObject.activeSelf)
+        {
+            summonText.gameObject.SetActive(false);
+        }
+    }
+
 }
