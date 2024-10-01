@@ -35,18 +35,19 @@ public class Health : MonoBehaviour
         {
             _isDead = true;
             float delay = GetAnimationClipLength("Death");
-            print(delay);
             if (gameObject.tag == "Enemy")
             {
                 if (gameObject.layer == 10)
                 {
                     _animator.SetTrigger("Death");
+                    _animator.SetBool("isDeath", true);
                     StartCoroutine(SceneM(delay));
 
                 }
                 else
                 {
                     _animator.SetTrigger("Death");
+                    _animator.SetBool("isDeath", true);
                     StartCoroutine(destroyGameObject(delay));
                 }
             }

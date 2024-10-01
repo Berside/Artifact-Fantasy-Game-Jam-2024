@@ -20,7 +20,6 @@ public class DarkFairyBossAIv3 : MonoBehaviour
     private float time = 0;
     private bool isTired = false;
     private bool isPhase2 = false;
-    private bool isDead = false;
     private float attackTimer = 0f;
     private float tiredTimer = 0f;
     private Animator animator;
@@ -69,7 +68,7 @@ public class DarkFairyBossAIv3 : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if (isDead) return;
+        if (health.isDead()) return;
 
         if (!isPhase2 && health.currentHealth <= health.maxHealth * 0.5f)
         {
@@ -238,7 +237,7 @@ public class DarkFairyBossAIv3 : MonoBehaviour
         // Summon two spirits that fly towards the player
         for (int i = 0; i < 2; i++)
         {
-            Vector3 spiritPosition = new Vector3(transform.position.x, transform.position.y, 0);
+            Vector3 spiritPosition = new Vector3(transform.position.x + i, transform.position.y, 0);
             GameObject spirit = Instantiate(spiritPrefab, spiritPosition, Quaternion.identity);
 
             // You will need to write code in the spirit prefab to move toward the player's position

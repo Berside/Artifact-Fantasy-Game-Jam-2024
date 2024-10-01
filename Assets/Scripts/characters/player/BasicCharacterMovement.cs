@@ -75,7 +75,7 @@ public class BasicCharacterMovement : MonoBehaviour
         //    flip();
         //}
 
-        if (_facingRight && Mathf.Abs(transform.eulerAngles.y) >= 179.001f || !_facingRight && transform.eulerAngles.y < 0.001f)
+        if (_facingRight && Mathf.Abs(transform.eulerAngles.y) >= 90f || !_facingRight && transform.eulerAngles.y < 90f)
         {
             //print(transform.localRotation.y);
             flip();
