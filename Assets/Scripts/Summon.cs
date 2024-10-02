@@ -15,6 +15,8 @@ public class EntitySummoner : MonoBehaviour
     private bool canCall = true;
     private float time = 0;
 
+    private bool playerInTriggerZone = false;
+
     private void Update()
     {
         time += Time.deltaTime;
@@ -23,6 +25,11 @@ public class EntitySummoner : MonoBehaviour
         {
             canCall = true;
         }
+
+        if (playerInTriggerZone && Input.GetKeyDown(KeyCode.E))
+        {
+            SummonEntity();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -30,29 +37,16 @@ public class EntitySummoner : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             ShowSummonText();
-        }
-        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
-        {
-            SummonEntity();
+            playerInTriggerZone = true;
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            ShowSummonText();
-        }
-        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
-        {
-            SummonEntity();
-        }
-    }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             HideSummonText();
+            playerInTriggerZone = false;
         }
     }
 
