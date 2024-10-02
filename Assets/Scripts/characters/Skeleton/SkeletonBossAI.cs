@@ -42,37 +42,40 @@ public class SkeletonBossAI : MonoBehaviour
 
     void Update()
     {
-        if (GetComponent<Health>().currentHealth > 0)
+        if (GetComponent<Health>().currentHealth <= 0)
         {
-            // Check if skeleton is on the ground
-            isGrounded = Physics2D.OverlapCircle(transform.position, 0.1f, groundLayer);
+            GetComponent<Animator>().SetBool("isWalking", false);
+            return;
+        }
 
-            player = DetectPlayer();
+        // Check if skeleton is on the ground
+        isGrounded = Physics2D.OverlapCircle(transform.position, 0.1f, groundLayer);
 
-            if (player != null && CanSeePlayer())
-            {
-                ChasePlayer();
-            }
-            else
-            {
-                if (isChasing)
-                {
-                    isChasing = false;
-                }
-                Roam();
-            }
+        player = DetectPlayer();
 
-            if (IsWallInFront() && isGrounded)
+        if (player != null && CanSeePlayer())
+        {
+            ChasePlayer();
+        }
+        else
+        {
+            if (isChasing)
             {
-                Jump();
+                isChasing = false;
             }
+            Roam();
+        }
 
-            // Check if it's time to spawn skeleton minions
-            if (Time.time >= lastSpawnTime + spawnCooldown)
-            {
-                StartCoroutine(SpawnSkeletons());
-                lastSpawnTime = Time.time;
-            }
+        if (IsWallInFront() && isGrounded)
+        {
+            Jump();
+        }
+
+        // Check if it's time to spawn skeleton minions
+        if (Time.time >= lastSpawnTime + spawnCooldown)
+        {
+            StartCoroutine(SpawnSkeletons());
+            lastSpawnTime = Time.time;
         }
     }
 

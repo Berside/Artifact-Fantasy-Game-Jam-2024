@@ -51,7 +51,9 @@ public class FlyAfterGroundContact : MonoBehaviour
         {
             FlyTowardsTarget();
         }
-        AttackPlayer();
+
+        if (!gameObject.GetComponent<Health>().isDead())
+            AttackPlayer();
 
         time += Time.deltaTime;
     }

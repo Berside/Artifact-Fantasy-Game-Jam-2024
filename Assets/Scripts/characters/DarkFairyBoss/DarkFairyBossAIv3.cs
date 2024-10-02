@@ -70,10 +70,14 @@ public class DarkFairyBossAIv3 : MonoBehaviour
 
         if (health.isDead()) return;
 
+        if (!isTired)
+            health.damageNotAllowed = true;
+        else
+            health.damageNotAllowed = false;
+
         if (!isPhase2 && health.currentHealth <= health.maxHealth * 0.5f)
         {
             StartPhase2();
-            animator.SetFloat("Phase2", 1f);
         }
 
         switch (currentState)
@@ -267,6 +271,7 @@ public class DarkFairyBossAIv3 : MonoBehaviour
     {
         isPhase2 = true;
         animator.SetTrigger("Phase2Transform");
+        tiredTimer = tiredDuration;
         // Increase movement speed in Phase 2
     }
 

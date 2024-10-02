@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 {
     public float currentHealth;
     public float maxHealth;
+    public bool damageNotAllowed = false;
 
     private Rigidbody2D rb;
     private bool _isDead = false;
@@ -27,69 +28,19 @@ public class Health : MonoBehaviour
 
     public void takeDamage(float damage)
     {
+        if (_isDead || damageNotAllowed)
+            return;
+
         currentHealth -= damage;
 
-        _animator.SetTrigger("Hurt");
+        if (currentHealth > 1)
+            _animator.SetTrigger("Hurt");
 
         if (currentHealth <= 0)
         {
             _isDead = true;
-            float delay = GetAnimationClipLength("Death");
-            if (gameObject.tag == "Enemy")
-            {
-                if (gameObject.layer == 10)
-                {
-                    _animator.SetTrigger("Death");
-                    _animator.SetBool("isDeath", true);
-                    StartCoroutine(SceneM(delay));
-
-                }
-                else
-                {
-                    _animator.SetTrigger("Death");
-                    _animator.SetBool("isDeath", true);
-                    StartCoroutine(destroyGameObject(delay));
-                }
-            }
-            else if (gameObject.tag == "Player")
-            {
-                _animator.SetTrigger("Death");
-                StartCoroutine(playerDeath(delay));
-                
-            }
+            _animator.SetTrigger("Death");
         }
-    }
-    IEnumerator playerDeath(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Destroy(gameObject);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-    IEnumerator SceneM(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("MainMenu");
-    }
-    IEnumerator destroyGameObject(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Destroy(gameObject);
-    }
-    public float GetAnimationClipLength(string clipName)
-    {
-        // Loop through all animation clips in the Animator
-        foreach (AnimationClip clip in _animator.runtimeAnimatorController.animationClips)
-        {
-            // Check if the clip name matches the provided name
-            if (clip.name == clipName)
-            {
-                return clip.length;  // Return the length in seconds
-            }
-        }
-
-        // Return 0 if the clip was not found
-        Debug.LogWarning("Animation clip not found: " + clipName);
-        return 0f;
     }
 
 
