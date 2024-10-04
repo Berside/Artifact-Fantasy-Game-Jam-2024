@@ -8,20 +8,21 @@ public class MainMenuController : MonoBehaviour
     public Button settingsButton;
     public Button FAQbutton;
     public Button exitButton;
+    public Button NewtButton;
     public GameObject mainMenuPanel;
     public GameObject settingsPanel;
     public GameObject FAQ;
+    public GameObject panel;
     public Text buttonTextComponent;
 
     void Start()
     {
-        // Инициализация кнопок
-        InitializeButtons();
-
-        // Настройка текста кнопки
-        SetupButtonText();
+        Cursor.visible = true;
         LoadPlayerPrefs();
+        InitializeButtons();
+        SetupButtonText();
     }
+
 
     private void InitializeButtons()
     {
@@ -32,11 +33,21 @@ public class MainMenuController : MonoBehaviour
             FAQbutton.onClick.AddListener(OnFAQClick);
             exitButton.onClick.AddListener(OnExitClick);
         }
+
+        LoadPlayerPrefs(); // Ensure PlayerPrefs are loaded
+
+        if (PlayerPrefs.GetInt("final", 0) == 1)
+        {
+            panel.SetActive(true);
+            NewtButton.onClick.RemoveAllListeners(); // Remove any existing listeners
+            NewtButton.onClick.AddListener(newClick);
+        }
         else
         {
-            Debug.LogError("Не все кнопки инициализированы!");
+            Debug.LogWarning("Не все кнопки инициализированы!");
         }
     }
+
 
     private void SetupButtonText()
     {
@@ -90,12 +101,18 @@ public class MainMenuController : MonoBehaviour
             Debug.LogError($"Ошибка при загрузке уровня: {e.Message}");
         }
     }
-
+    void newClick()
+    {
+        SceneManager.LoadScene("FirstLevel");
+        Time.timeScale = 1f;
+    }
     private void LoadPlayerPrefs()
     {
         PlayerPrefs.GetInt("final", 0);
         PlayerPrefs.GetInt("NewGameStarted", 0);
+        PlayerPrefs.Save(); // Save PlayerPrefs after loading
     }
+
 
     private void SavePlayerPrefs()
     {
